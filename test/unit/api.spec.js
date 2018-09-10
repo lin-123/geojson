@@ -7,9 +7,9 @@ describe('api', () => {
     it('normal', async () => {
       const keywords = '山东省'
       sinon.stub(axios, 'get').callsFake((url, {params}) => {
-        assert(url === requestUrl)
-        assert(params.subdistrict === 1)
-        assert(params.extensions === 'base')
+        assert.ok(url === requestUrl)
+        assert.ok(params.subdistrict === 1)
+        assert.ok(params.extensions === 'base')
         return Promise.resolve({
           data: {
             districts: ['ok']
@@ -17,7 +17,7 @@ describe('api', () => {
         })
       })
       const res = await Api.getCityInfo(keywords)
-      assert(res === 'ok')
+      assert.ok(res === 'ok')
       axios.get.restore()
     })
   })
