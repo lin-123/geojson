@@ -1,16 +1,5 @@
 # sync-geojson
 
-## TODO
-- [ ] [GEOJSON introduction](https://en.wikipedia.org/wiki/GeoJSON)
-- [ ] add unit test
-- [ ] command line
-  - [ ] setup config -> write to config file
-  - [ ] input arg for keywords
-  - [ ] get oneself district geojson or get its child districts geojson
-  - [ ] output path
-  - [ ] compress geojson
-- [ ] add logger plugin
-
 ## Introduction
 
 > build chinesse geojson by gaode webservice
@@ -42,3 +31,7 @@
   }
   ```
 - npm run build
+
+## Knowledge
+
+- [geojson introduction](./wiki/GEOJSON.md)
