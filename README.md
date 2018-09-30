@@ -27,7 +27,7 @@
 - vi config.json
   ```json
   {
-    key: 'your gaode application key'
+    "key": "your gaode application key"
   }
   ```
 - npm run build
