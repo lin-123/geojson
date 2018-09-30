@@ -12,6 +12,7 @@ class Sync {
   }
   async init() {
     const {name, center, districts, adcode} = await Api.getCityInfo(this.keyword)
+    if(!name) return;
     /** todo
      *  get the district for input keyword
      *

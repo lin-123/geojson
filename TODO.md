@@ -1,5 +1,5 @@
 ## TODO
-- [ ] add unit test
+- [x] add unit test
 - [ ] command line
   - [ ] setup config -> write to config file
   - [ ] input arg for keywords
