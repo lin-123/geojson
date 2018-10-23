@@ -1,21 +1,36 @@
 {
-  "name": "sync-geojson",
-  "version": "1.0.0",
-  "description": "## TODO - [ ] GEOJSON 格式 - [ ] 生成一个省和其下属的区的区域边界   - [ ] 如果需要拼接子区域需要再调用子区域的接口， 获取子区域polygon line",
-  "main": ".autod.conf.js",
+  "name": "geojson",
+  "version": "0.1.0",
+  "description": "build geojson by gaode api",
+  "main": "src/index.js",
+  "bin": {
+    "geojson": "src/index.js"
+  },
   "scripts": {
-    "build": "KEYWORD=深圳 OUTPUT_DIR=geojson node src",
+    "build": "node src -c 深圳 -o geojson shenzhen",
     "test": "./node_modules/.bin/mocha test/init.spec.js test/*/*.spec.js",
     "debug": "devtool ./src"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
     "power-assert": "^1.6.1",
     "sinon": "^6.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {},
+  "keywords": [
+    "chinese",
+    "geojson",
+    "gaode"
+  ]
 }

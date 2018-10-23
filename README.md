@@ -1,8 +1,8 @@
-# sync-geojson
+# geojson
 
 ## Introduction
 
-> build chinesse geojson by gaode webservice
+> build geojson by gaode webservice
 - [API intrudction](https://lbs.amap.com/api/webservice/guide/api/district)
 - [GEOJSON introduction](https://en.wikipedia.org/wiki/GeoJSON)
 
@@ -11,6 +11,28 @@
   - `keywords`: district name | citycode | adcode
   - `subdistrict`: 0 | 1 | 2
   - `extensions`: base--no polyline | all--have polyline
+
+## Installation
+
+- npm i geojosn-gaode
+
+## Usage
+```
+$ geojson -h
+
+Usage: geojson [options] [fileName]
+
+build geojson by gaode api
+
+Options:
+  -V, --version         output the version number
+  -k --key <key>        gaode application key
+  -c --city <city>      city name or city code
+  -o --output [output]  output file path for geojson, default is current directory [optional]
+  -h, --help            output usage information
+```
+
+- sample: `node src -c 深圳 -o geojson -k xxx shenzhen`
 
 ## Directories
 ```
@@ -21,18 +43,3 @@
   ...
 ```
 
-## Usage
-- git clone git@github.com:lin-123/geojson.git
-- cd geojson
-- npm i
-- vi config.json
-  ```json
-  {
-    "key": "your gaode application key"
-  }
-  ```
-- npm run build
-
-## Knowledge
-
-- [geojson introduction](./wiki/GEOJSON.md)
