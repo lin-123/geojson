@@ -2,9 +2,9 @@
 - [x] add unit test
 - [ ] command line
   - [ ] setup config -> write to config file
-  - [ ] input arg for keywords
+  - [x] input arg for keywords
   - [ ] get oneself district geojson or get its child districts geojson
-  - [ ] output path
+  - [x] output path
   - [ ] compress geojson
 - [ ] add logger plugin
 

@@ -1,36 +1,21 @@
-const fs = require('fs')
-const path = require('path')
-const Geojson = require('./Geojson')
-const Api = require('./Api')
+#!/usr/bin/env node
 
-class Sync {
-  constructor({keyword, dir = './'}) {
-    if(!keyword) return console.error('invalid keyword', keyword)
-    this.keyword = keyword
-    this.outputDir = path.join(process.cwd(), dir)
-    this.init()
-  }
-  async init() {
-    const {name, center, districts, adcode} = await Api.getCityInfo(this.keyword)
-    if(!name) return;
-    /** todo
-     *  get the district for input keyword
-     *
-     */
-    const childDistricts = await Promise.all(districts.map(d => Api.getPolyline(d.adcode)))
-    const features = childDistricts.map(d => Geojson.getFeature(d))
+const program = require('commander');
+const Handler = require('./handler')
+const {version, name} = require('../package.json')
 
-    const geojson = Geojson.getGeojson({name, center, features})
-    this.output(adcode, geojson)
-  }
-  async output(filename, json) {
-    const outputPath = path.join(this.outputDir, `${filename}.json`)
-    console.info(`writing geojson to ${outputPath} ....`)
-    fs.writeFileSync(outputPath, JSON.stringify(json), 'utf-8')
-    console.info('success....')
+program.arguments('<fileName>')
+  .name(name)
+  .description('build geojson by gaode api')
+  .version(version)
+  // todo config gaode application
+  // .option('--config', 'config gaode application key')
+  .option('-k --key <key>', 'gaode application key')
+  .option('-c --city <city>', 'city name or city code')
+  .option('-o --output [output]', 'output file path for geojson [optional]')
+  // .option('-q --quiet', 'will not print anything', true)
+  .action(function(fileName) {
+    new Handler(fileName, program)
+  })
 
-  }
-}
-
-// module.exports = Sync
-new Sync({keyword: process.env.KEYWORD, dir: process.env.OUTPUT_DIR})
+program.parse(process.argv)

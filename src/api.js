@@ -1,29 +1,36 @@
 const axios = require('axios')
-const config = require('../config.json')
+// const config = require('../config.json')
 
-const getDistricts = async (keywords, subdistrict, extensions) => {
-  try {
-    const res = await axios.get('http://restapi.amap.com/v3/config/district', {
-      params: {
-        key: config.key,
-        subdistrict,
-        keywords,
-        extensions
-      }
-    })
-    return res.data.districts[0]
-  } catch (e) {
-    console.error(e);
-    return {}
+class Api {
+  constructor(key) {
+    this.key = key;
   }
-}
 
-module.exports = {
+  async getDistricts(keywords, subdistrict, extensions) {
+    try {
+      const res = await axios.get('http://restapi.amap.com/v3/config/district', {
+        params: {
+          key: this.key,
+          subdistrict,
+          keywords,
+          extensions
+        }
+      })
+      return res.data.districts[0]
+    } catch (e) {
+      console.error(e);
+      return {}
+    }
+  }
+
   async getCityInfo(keywords) {
-    return getDistricts(keywords, 1, 'base')
-  },
+    return this.getDistricts(keywords, 1, 'base')
+  }
 
   async getPolyline(keywords) {
-    return getDistricts(keywords, 0, 'all')
+    return this.getDistricts(keywords, 0, 'all')
   }
+
 }
+
+module.exports = Api
