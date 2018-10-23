@@ -4,6 +4,7 @@
 
 > build chinesse geojson by gaode webservice
 - [API intrudction](https://lbs.amap.com/api/webservice/guide/api/district)
+- [GEOJSON introduction](https://en.wikipedia.org/wiki/GeoJSON)
 
 - example `http://restapi.amap.com/v3/config/district?key=&keywords=&subdistrict=1&extensions=all`
   - `key`: apply to gaode for key
