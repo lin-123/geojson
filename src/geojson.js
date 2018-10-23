@@ -42,7 +42,11 @@ class Geojson {
     if(!polyline) return;
 
     return polyline.split('|')
-      .map(poly => poly.split(';').map(pointstr => pointstr.split(',')))
+      .map(poly =>
+        poly.split(';').map(pointstr =>
+          pointstr && pointstr.split(',').map(i => +(+i).toFixed(5))
+        )
+      )
   }
 }
 

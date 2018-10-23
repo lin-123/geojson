@@ -1,20 +1,10 @@
 # sync-geojson
 
-## TODO
-- [ ] [GEOJSON introduction](https://en.wikipedia.org/wiki/GeoJSON)
-- [ ] add unit test
-- [ ] command line
-  - [ ] setup config -> write to config file
-  - [ ] input arg for keywords
-  - [ ] get oneself district geojson or get its child districts geojson
-  - [ ] output path
-  - [ ] compress geojson
-- [ ] add logger plugin
-
 ## Introduction
 
 > build chinesse geojson by gaode webservice
 - [API intrudction](https://lbs.amap.com/api/webservice/guide/api/district)
+- [GEOJSON introduction](https://en.wikipedia.org/wiki/GeoJSON)
 
 - example `http://restapi.amap.com/v3/config/district?key=&keywords=&subdistrict=1&extensions=all`
   - `key`: apply to gaode for key
@@ -38,7 +28,11 @@
 - vi config.json
   ```json
   {
-    key: 'your gaode application key'
+    "key": "your gaode application key"
   }
   ```
 - npm run build
+
+## Knowledge
+
+- [geojson introduction](./wiki/GEOJSON.md)
