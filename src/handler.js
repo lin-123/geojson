@@ -5,10 +5,9 @@ const Api = require('./Api')
 
 class Sync {
   constructor(outputName, {city, output = './', key}) {
+    // console.log('arguments', outputName, city, output, key);
     if(!city) return console.error('invalid city', city)
     if(!key) return console.error('please setup your gaode application key')
-
-    // console.log('arguments', outputName, city, output, key);
 
     this.outputName = outputName
     this.keyword = city

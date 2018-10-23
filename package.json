@@ -1,6 +1,6 @@
 {
   "name": "geojson",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "build geojson by gaode api",
   "main": "src/index.js",
   "bin": {
