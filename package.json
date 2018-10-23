@@ -1,5 +1,5 @@
 {
-  "name": "geojson",
+  "name": "geojson-gaode",
   "version": "0.1.0",
   "description": "build geojson by gaode api",
   "main": "src/index.js",
@@ -11,8 +11,6 @@
     "test": "./node_modules/.bin/mocha test/init.spec.js test/*/*.spec.js",
     "debug": "devtool ./src"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "chalk": "^2.4.1",
@@ -25,12 +23,16 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/lin-123/geojson"
   },
-  "bugs": {},
+  "bugs": {
+    "url": "https://github.com/lin-123/geojson/issues"
+  },
   "keywords": [
     "chinese",
     "geojson",
     "gaode"
-  ]
+  ],
+  "author": "lin-123",
+  "license": "ISC"
 }
