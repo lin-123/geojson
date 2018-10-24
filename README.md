@@ -32,7 +32,7 @@ Options:
   -h, --help            output usage information
 ```
 
-- sample: `node src -c 深圳 -o geojson -k xxx shenzhen`
+- sample: `geojson -c 深圳 -o geojson -k xxx shenzhen`
 
 ## Directories
 ```
