@@ -1,4 +1,5 @@
 ## TODO
+- [ ] 添加压缩工具， mapshaper 里有这种工具
 - [x] add unit test
 - [ ] command line
   - [ ] setup config -> write to config file
