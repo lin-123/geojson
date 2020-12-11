@@ -15,7 +15,7 @@
 
 ## Installation
 
-- npm i geojson-gaode
+- npm i -g geojson-gaode
 
 ## Usage
 ```
